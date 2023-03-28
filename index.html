@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Welcome Page</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Sallu!</h1>
+        <div class="quote-container">
+            <p class="quote">"A mother's love is the heart of the family."</p>
+        </div>
+        <p>Name suggestions:</p>
+        <select id="name-suggestions" onchange="showNameMeaning()"></select>
+        <div id="name-meaning"></div>
+        <nav>
+            <a href="page2.html">Page 2</a>
+            <a href="page3.html">Page 3</a>
+        </nav>
+        <h2 id="due-date"></h2>
+        <h3 id="countdown"></h3>
+    </div>
+
+       <script>
+    const namesData = {
+        "names":[
+                {
+                    "name": "A'idah",
+                    "meaning": "Guest, the one who's returning"
+                },
+                {
+                    "name": "A'ishah",
+                    "meaning": "Wife of the Prophet (SAW)"
+                },
+                {
+                    "name": "A'shadieeyah",
+                    "meaning": "Princess, cute, perfect"
+                },
+                {
+                    "name": "Aa'idah",
+                    "meaning": "Name of a narrator of hadith"
+                },
+                {
+                    "name": "Aaban",
+                    "meaning": "Name of the Angel"
+                },
+                {
+                    "name": "Aabidah",
+                    "meaning": "Worshipper"
+                },
+                {
+                    "name": "Aabirah",
+                    "meaning": "Fleeting, transitory, ephemeral"
+                },
+                {
+                    "name": "Aabish",
+                    "meaning": "Daughter of Sa'd who was a queen of Iran (AN)"
+                },
+                {
+                    "name": "Aadil",
+                    "meaning": "Just, Upright"
+                },
+                {
+                    "name": "Aadila",
+                    "meaning": "Just, Honest, Equal, Upright"
+                },
+                {
+                    "name": "Aaeedah",
+                    "meaning": "Visiting, Returning, Reward"
+                },
+                {
+                    "name": "Aaeesha",
+                    "meaning": "Life, Vivaciousness, Living Prosperous, Youngest wife of the Prophet Muhammad (pbuh)"
+                },
+                {
+                    "name": "Aafiya",
+                    "meaning": "Good Health"
+                },
+                {
+                    "name": "Aafreeda",
+                    "meaning": "Created, Produced"
+                },
+                {
+                    "name": "Aafreen",
+                    "meaning": "Brave, Acclaim"
+                },
+                {
+                    "name": "Aahil",
+                    "meaning": "Prince"
+                },
+                {
+                    "name": "Aakifah",
+                    "meaning": "Devoted, Dedicated"
+                }
+            ]
+        };
+
+    function populateNames() {
+        const selectElement = document.getElementById("name-suggestions");
+
+        // Add a default option to the select element
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.text = "Select a name";
+        selectElement.appendChild(defaultOption);
+
+        // Add the names from the JSON data as options in the select element
+        namesData.names.forEach(nameData => {
+            const option = document.createElement("option");
+            option.value = nameData.meaning;
+            option.text = nameData.name;
+            selectElement.appendChild(option);
+        });
+    }
+
+    function showNameMeaning() {
+        const selectElement = document.getElementById("name-suggestions");
+        const meaningDiv = document.getElementById("name-meaning");
+
+        if (selectElement.value) {
+            meaningDiv.innerHTML = `<p><strong>Meaning:</strong> ${selectElement.value}</p>`;
+        } else {
+            meaningDiv.innerHTML = "";
+        }
+    }
+
+    function updateCountdown() {
+        const dueDate = new Date("October 25, 2023");
+        const currentDate = new Date();
+        const timeDifference = dueDate - currentDate;
+
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        document.getElementById("due-date").innerText = `Due date: ${dueDate.toDateString()}`;
+        document.getElementById("countdown").innerText = `Time left: ${daysDifference} days ${hoursDifference} hours ${minutesDifference} minutes ${secondsDifference} seconds`;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        populateNames();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    });
+    </script>
+</body>
+</html>

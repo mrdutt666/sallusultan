@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url("https://previews.123rf.com/images/julianka/julianka1706/julianka170600011/80091970-beautiful-and-cute-cartoon-mother-with-baby-happy-motherhood-illustration-for-mothers-day-vector.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.quote-container {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.quote {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    background-color: #555;
+}

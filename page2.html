@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .slideshow {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadein 136s infinite;
+        }
+
+        .slideshow img:nth-child(1) { animation-delay: 0s; }
+        .slideshow img:nth-child(2) { animation-delay: 8s; }
+        .slideshow img:nth-child(3) { animation-delay: 16s; }
+        .slideshow img:nth-child(4) { animation-delay: 24s; }
+        .slideshow img:nth-child(5) { animation-delay: 32s; }
+        .slideshow img:nth-child(6) { animation-delay: 40s; }
+        .slideshow img:nth-child(7) { animation-delay: 48s; }
+        .slideshow img:nth-child(8) { animation-delay: 56s; }
+        .slideshow img:nth-child(9) { animation-delay: 64s; }
+        .slideshow img:nth-child(10) { animation-delay: 72s; }
+        .slideshow img:nth-child(11) { animation-delay: 80s; }
+        .slideshow img:nth-child(12) { animation-delay: 88s; }
+        .slideshow img:nth-child(13) { animation-delay: 96s; }
+        .slideshow img:nth-child(14) { animation-delay: 104s; }
+        .slideshow img:nth-child(15) { animation-delay: 112s; }
+        .slideshow img:nth-child(16) { animation-delay: 120s; }
+        .slideshow img:nth-child(17) { animation-delay: 128s; }
+
+        @keyframes fadein {
+            0% { opacity: 0; }
+            5.9% { opacity: 1; }
+            11.8% { opacity: 1; }
+            17.6% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+    </style>
+    <title>Page 2 - Photos</title>
+</head>
+<body>
+    <div class="slideshow">
+        <img src="wife1.jpg" alt="Your wife's photo 1">
+        <img src="wife2.jpg" alt="Your wife's photo 2">
+        <img src="wife3.jpg" alt="Your wife's photo 3">
+        <img src="wife4.jpg" alt="Your wife's photo 4">
+        <img src="wife5.jpg" alt="Your wife's photo 5">
+        <img src="wife6.jpg" alt="Your wife's photo 6">
+        <img src="wife7.jpg" alt="Your wife's photo 7">
+        <img src="wife8.jpg" alt="Your wife's photo 8">
+        <img src="wife9.jpg" alt="Your wife's photo 9">
+        <img src="wife10.jpg" alt="Your wife's photo 10">
+        <img src="wife11.jpg" alt="Your wife's photo 11">
+        <img src="wife12.jpg" alt="Your wife's photo 12">
+        <img src="wife13.jpg" alt="Your wife's photo 13">
+        <img src="wife14.jpg" alt="Your wife's photo 14">
+        <img src="wife15.jpg" alt="Your wife's photo 15">
+        <img src="wife16.jpg" alt="Your wife's photo 16">
+        <img src="wife17.jpg" alt="Your wife's photo 17">
+
+ </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page3.html">Page 3</a>
+    </nav>
+</body>
+</html>
